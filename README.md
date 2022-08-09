@@ -1,6 +1,8 @@
-# [Project 1: Penduduk dan PDRB Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
+# [Project 1: Penduduk Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
 
-# Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'
+# [Project 2: PDRB Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
+
+#Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'
 
 jakarta2020 <- read_excel ('Jakarta.xlsx')
 banten2020 <- read_excel ('Banten.xlsx')
