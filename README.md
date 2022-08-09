@@ -5,8 +5,8 @@
 # [Project 2: PDRB Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
 
 # THE CODE
-#Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'
-`jakarta2020 <- read_excel ('Jakarta.xlsx')`
+-Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'<br/>
+`jakarta2020 <- read_excel ('Jakarta.xlsx')`<br/>
 `banten2020 <- read_excel ('Banten.xlsx')`
 jabar2020 <- read_excel ('Jawa Barat.xlsx')
 jatim2020 <- read_excel ('Jawa Timur.xlsx')
