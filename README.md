@@ -7,7 +7,7 @@
 #Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'
 
 `jakarta2020 <- read_excel ('Jakarta.xlsx')`
-banten2020 <- read_excel ('Banten.xlsx')
+`banten2020 <- read_excel ('Banten.xlsx')`
 jabar2020 <- read_excel ('Jawa Barat.xlsx')
 jatim2020 <- read_excel ('Jawa Timur.xlsx')
 jateng2020 <- read_excel ('Jawa Tengah.xlsx')
