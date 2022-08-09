@@ -31,38 +31,38 @@
 `jateng2020 <- jateng2020 %>%
     setNames(c("Daerah", "Penduduk"))`<br/>
 jabar2020 <- jabar2020 %>%
-    setNames(c("Daerah", "Penduduk"))
+    setNames(c("Daerah", "Penduduk"))<br/><br/>
 jatim2020 <- jatim2020 %>%
-    setNames(c("Daerah", "Penduduk"))
+    setNames(c("Daerah", "Penduduk"))<br/>
 banten2020 <- banten2020 %>%
-    setNames(c("Daerah", "Penduduk"))
+    setNames(c("Daerah", "Penduduk"))<br/>
 yogya2020 <- yogya2020 %>%
-    setNames(c("Daerah", "Penduduk"))
-	
+    setNames(c("Daerah", "Penduduk"))<br/>
+<br/>
 #penduduk jakarta 2268.81 ubah ke integer dan dikali 1000
-library(readr) --parse_number()
+library(readr) --parse_number()<br/>
 jakarta2020$Penduduk <- jakarta2020$Penduduk %>%
-	parse_number()
+	parse_number()<br/>
 jakarta2020 <- jakarta2020 %>%
-    mutate(Penduduk = Penduduk*1000)
+    mutate(Penduduk = Penduduk*1000)<br/>
 banten2020$Penduduk <- banten2020$Penduduk %>%
-    parse_number()
+    parse_number()<br/>
 jabar2020$Penduduk <- jabar2020$Penduduk %>%
-    parse_number()
+    parse_number()<br/>
 jatim2020$Penduduk <- jatim2020$Penduduk %>%
-    parse_number()
+    parse_number()<br/>
 jateng2020$Penduduk <- jateng2020$Penduduk %>%
-    parse_number()
+    parse_number()<br/>
 yogya2020$Penduduk <- yogya2020$Penduduk %>%
-    parse_number()
-
-#add Provinsi table
-yogya2020 <- yogya2020 %>%
-    mutate(Provinsi = 'Yogyakarta')
-jabar2020 <- jabar2020 %>%
-    mutate(Provinsi = 'Jawa Barat')
-jatim2020 <- jatim2020 %>%
-    mutate(Provinsi = 'Jawa Timur')
+    parse_number()<br/>
+<br/>
+- add Provinsi table
+`yogya2020 <- yogya2020 %>%
+    mutate(Provinsi = 'Yogyakarta')`<br/>
+`jabar2020 <- jabar2020 %>%
+    mutate(Provinsi = 'Jawa Barat')`<br/>
+`jatim2020 <- jatim2020 %>%
+    mutate(Provinsi = 'Jawa Timur')`<br/>
 jateng2020 <- jateng2020 %>%
     mutate(Provinsi = 'Jawa Tengah')
 banten2020 <- banten2020 %>%
