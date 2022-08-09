@@ -35,14 +35,14 @@
     setNames(c("Daerah", "Penduduk"))`<br/>
 `jateng2020 <- jateng2020 %>%
     setNames(c("Daerah", "Penduduk"))`<br/>
-jabar2020 <- jabar2020 %>%
-    setNames(c("Daerah", "Penduduk"))<br/><br/>
-jatim2020 <- jatim2020 %>%
-    setNames(c("Daerah", "Penduduk"))<br/>
-banten2020 <- banten2020 %>%
-    setNames(c("Daerah", "Penduduk"))<br/>
-yogya2020 <- yogya2020 %>%
-    setNames(c("Daerah", "Penduduk"))<br/>
+`jabar2020 <- jabar2020 %>%
+    setNames(c("Daerah", "Penduduk"))`<br/>
+`jatim2020 <- jatim2020 %>%
+    setNames(c("Daerah", "Penduduk"))`<br/>
+`banten2020 <- banten2020 %>%
+    setNames(c("Daerah", "Penduduk"))`<br/>
+`yogya2020 <- yogya2020 %>%<br/>
+    setNames(c("Daerah", "Penduduk"))`<br/>
 <br/>
 #penduduk jakarta 2268.81 ubah ke integer dan dikali 1000<br/>
 `library(readr) --parse_number()`<br/>
