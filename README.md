@@ -4,32 +4,32 @@
 
 # [Project 2: PDRB Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
 
-# THE CODE
--Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'<br/>
+# Code
+- Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'<br/>
 `jakarta2020 <- read_excel ('Jakarta.xlsx')`<br/>
-`banten2020 <- read_excel ('Banten.xlsx')`
-jabar2020 <- read_excel ('Jawa Barat.xlsx')
-jatim2020 <- read_excel ('Jawa Timur.xlsx')
-jateng2020 <- read_excel ('Jawa Tengah.xlsx')
-yogya2020 <- read_excel ('Yogyakarta.xlsx')
-
-jakarta2020 <- jakarta2020[-c(1:2,10:13),]
-jakarta2020 <- jakarta2020[,c(1,3)]
-jabar2020 <- jabar2020[,c(1,4)]
-jabar2020 <- jabar2020[-c(1,30:33),]
-jateng2020 <- jateng2020[,c(1,3)]
-jateng2020 <- jateng2020[-c(1,38:41),]
-jatim2020 <- jatim2020[,c(1,10)]
-jatim2020 <- jatim2020[-c(1:2,42:45),]
-banten2020 <- banten2020[,c(1,9)]
-banten2020 <- banten2020[-c(1:2,12:15),]
-yogya2020 <- yogya2020[,c(1:2)]
-yogya2020 <- yogya2020[-c(1,8:11),]
-
-jakarta2020 <- jakarta2020 %>%
-    setNames(c("Daerah", "Penduduk"))
-jateng2020 <- jateng2020 %>%
-    setNames(c("Daerah", "Penduduk"))
+`banten2020 <- read_excel ('Banten.xlsx')`<br/>
+`jabar2020 <- read_excel ('Jawa Barat.xlsx')`<br/>
+`jatim2020 <- read_excel ('Jawa Timur.xlsx')`<br/>
+`jateng2020 <- read_excel ('Jawa Tengah.xlsx')`<br/>
+`yogya2020 <- read_excel ('Yogyakarta.xlsx')`<br/>
+<br/>
+`jakarta2020 <- jakarta2020[-c(1:2,10:13),]`<br/>
+`jakarta2020 <- jakarta2020[,c(1,3)]`<br/>
+`jabar2020 <- jabar2020[,c(1,4)]`<br/>
+`jabar2020 <- jabar2020[-c(1,30:33),]`<br/>
+`jateng2020 <- jateng2020[,c(1,3)]`<br/>
+`jateng2020 <- jateng2020[-c(1,38:41),]`<br/>
+`jatim2020 <- jatim2020[,c(1,10)]`<br/>
+`jatim2020 <- jatim2020[-c(1:2,42:45),]`<br/>
+`banten2020 <- banten2020[,c(1,9)]`<br/>
+`banten2020 <- banten2020[-c(1:2,12:15),]`<br/>
+`yogya2020 <- yogya2020[,c(1:2)]`<br/>
+`yogya2020 <- yogya2020[-c(1,8:11),]`<br/>
+<br/>
+`jakarta2020 <- jakarta2020 %>%
+    setNames(c("Daerah", "Penduduk"))`<br/>
+`jateng2020 <- jateng2020 %>%
+    setNames(c("Daerah", "Penduduk"))`<br/>
 jabar2020 <- jabar2020 %>%
     setNames(c("Daerah", "Penduduk"))
 jatim2020 <- jatim2020 %>%
