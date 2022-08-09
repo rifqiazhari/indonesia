@@ -1,7 +1,8 @@
 # [Project 1: Penduduk Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
-- sada
-- H2saas
-![alt text](scsc.png)
+- Pulau Jawa merupakan pulau terpadat di dunia
+- Hampir 60% penduduk Indonesia tinggal di Pulau Jawa
+- Pulau Jawa terdiri dari 5 provinsi
+![alt sdt](scsc.png)
 
 # [Project 2: PDRB Kabupaten/ Kota di Pulau Jawa](https://github.com/rifqiazhari/indonesia/blob/main/pulau_jawa)
 
