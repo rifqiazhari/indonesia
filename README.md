@@ -163,10 +163,10 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 `data3.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2013','Unnamed: 2':'2014', 'Unnamed: 3':'2015'}, inplace = True)`<br/>
 <br/>
 `#delete columns`<br/>
-`data1 = data1.drop(
-    labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
-    axis = 1,
-    inplace = False
+`data1 = data1.drop(<br/>
+    labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],<br/>
+    axis = 1,<br/>
+    inplace = False<br/>
 )`<br/>
 <br/>
 `data2 = data2.drop(
