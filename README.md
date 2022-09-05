@@ -10,7 +10,7 @@
 ![alt text](g2ie2e.png)
 
 # Code in R
-- Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'<br/>
+`#Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'`<br/>
 `jakarta2020 <- read_excel ('Jakarta.xlsx')`<br/>
 `banten2020 <- read_excel ('Banten.xlsx')`<br/>
 `jabar2020 <- read_excel ('Jawa Barat.xlsx')`<br/>
@@ -75,7 +75,7 @@
 `jakarta2020 <- jakarta2020 %>%`<br/>
 &emsp;&emsp;`mutate(Provinsi = 'Jakarta Raya')`<br/>
 <br/>
-- bindrow<br/>
+`bindrow<br/>`<br/>
 `jawa2020 <- banten2020 %>%`<br/>
 &emsp;&emsp;`bind_rows(jakarta2020, jabar2020, jateng2020, jatim2020, yogya2020)`<br/>
 <br/>
