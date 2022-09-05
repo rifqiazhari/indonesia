@@ -146,8 +146,8 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
     str_replace("Kota Surabaya", "Surabaya")`<br/>
 
 # Code in Python
-#Import file - UI
-#Import library
+`#Import file`<br/>
+`#Import library`<br/>
 `import pandas as pd`<br/>
 `import numpy as pd`<br/>
 `import matplotlib.pyplot as plt`<br/>
@@ -159,20 +159,22 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 <br/>
 `#rename columns`<br/>
 `data1.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2019','Unnamed: 2':'2020', 'Unnamed: 3':'2021'}, inplace = True)`<br/>
-data2.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2016','Unnamed: 2':'2017', 'Unnamed: 3':'2018'}, inplace = True)
-data3.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2013','Unnamed: 2':'2014', 'Unnamed: 3':'2015'}, inplace = True)
-
-#delete columns
-data1 = data1.drop(
+`data2.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2016','Unnamed: 2':'2017', 'Unnamed: 3':'2018'}, inplace = True)`<br/>
+`data3.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2013','Unnamed: 2':'2014', 'Unnamed: 3':'2015'}, inplace = True)`<br/>
+<br/>
+`#delete columns`<br/>
+`data1 = data1.drop(
     labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
     axis = 1,
     inplace = False
-)
-data2 = data2.drop(
+)`<br/>
+<br/>
+`data2 = data2.drop(
     labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
     axis = 1,
     inplace = False
-)
+)`<br/>
+<br/>
 data3 = data3.drop(
     labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
     axis = 1,
