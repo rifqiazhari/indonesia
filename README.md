@@ -130,11 +130,12 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 &emsp;&emsp;`str_replace("Administrasi ", "") %>%`<br/>
 &emsp;&emsp;`str_replace("Gunungkidul", "Gunung Kidul")`<br/>
 <br/>
-- join jawa2020 & gdp2016<br/>
-`join <- jawa2020 %>%
-    inner_join(gdp2016, by = "Daerah")`<br/>
+
+`#join jawa2020 & gdp2016`<br/>
+`join <- jawa2020 %>%`<br/>
+&emsp;&emsp;`inner_join(gdp2016, by = "Daerah")`<br/>
 <br/>
-- penyesuaian dengan data shp<br/>
+`**#penyesuaian dengan data shp**`<br/>
 `join$Daerah <- join$Daerah %>%`<br/>
 &emsp;&emsp;`str_replace("Kota Cilegon", "Cilegon") %>%`<br/>
 &emsp;&emsp;`str_replace("Kota Tangerang Selatan", "Tangerang Selatan") %>%`<br/>
