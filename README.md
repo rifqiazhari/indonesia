@@ -118,10 +118,12 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 &emsp;&emsp;`str_replace("Daerah Istimewa Yogyakarta", "Yogyakarta") %>%`<br/>
 &emsp;&emsp;`str_replace("Daerah Khusus Ibukota Jakarta", "Jakarta Raya") %>%`<br/>
 &emsp;&emsp;`str_replace("Daerah Khusus Ibu Kota Jakarta", "Jakarta Raya")`<br/>
+<br/>
 
 `#filter hanya provinsi di pulau jawa`<br/>
-`gdp2016 <- gdp2016 %>%`<br/
+`gdp2016 <- gdp2016 %>%`<br/>
 &emsp;&emsp;`filter(Provinsi %in% c('Jakarta Raya', 'Jawa Barat', 'Banten', 'Jawa Tengah', 'Yogyakarta', 'Jawa Timur'))`<br/>
+<br/>
 
 `#rename nama daerah`<br/>
 `gdp2016$Daerah <- gdp2016$Daerah  %>%`<br/>
@@ -135,7 +137,8 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 `join <- jawa2020 %>%`<br/>
 &emsp;&emsp;`inner_join(gdp2016, by = "Daerah")`<br/>
 <br/>
-`**#penyesuaian dengan data shp**`<br/>
+
+`#penyesuaian dengan data shp`<br/>
 `join$Daerah <- join$Daerah %>%`<br/>
 &emsp;&emsp;`str_replace("Kota Cilegon", "Cilegon") %>%`<br/>
 &emsp;&emsp;`str_replace("Kota Tangerang Selatan", "Tangerang Selatan") %>%`<br/>
