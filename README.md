@@ -89,14 +89,10 @@
 &emsp;&emsp;`str_replace("PROVINSI JAWA TENGAH", "Jawa Tengah") %>%`<br/>
 &emsp;&emsp;`str_replace("Provinsi", "") %>%`<br/>
 &emsp;&emsp;`str_replace("Gunungkidul", "Gunung Kidul")`<br/>
-<br/>
-`jawa2020$Daerah <- jawa2020$Daerah  %>%
-    str_replace("Kulonprogo", "Kulon Progo")`<br/>
+&emsp;&emsp;`str_replace("Kulonprogo", "Kulon Progo")`<br/>
+&emsp;&emsp;`str_replace("Yogyakarta", "Kota Yogyakarta")`<br/>
 <br/>
 `jawa2020 <- jawa2020[-c(120),]`<br/>
-<br/>
-`jawa2020$Daerah <- jawa2020$Daerah  %>%
-    str_replace("Yogyakarta", "Kota Yogyakarta")`<br/>
 <br/>
 `#web scraping to add pdrb data`<br/>
 https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDRB<br/>
