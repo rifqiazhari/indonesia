@@ -10,7 +10,7 @@
 ![alt text](g2ie2e.png)
 
 # Code in R
-- Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'<br/>
+`- Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'`<br/>
 `jakarta2020 <- read_excel ('Jakarta.xlsx')`<br/>
 `banten2020 <- read_excel ('Banten.xlsx')`<br/>
 `jabar2020 <- read_excel ('Jawa Barat.xlsx')`<br/>
@@ -31,64 +31,64 @@
 `yogya2020 <- yogya2020[,c(1:2)]`<br/>
 `yogya2020 <- yogya2020[-c(1,8:11),]`<br/>
 <br/>
-`jakarta2020 <- jakarta2020 %>%
-    setNames(c("Daerah", "Penduduk"))`<br/>
-`jateng2020 <- jateng2020 %>%
-    setNames(c("Daerah", "Penduduk"))`<br/>
-`jabar2020 <- jabar2020 %>%
-    setNames(c("Daerah", "Penduduk"))`<br/>
-`jatim2020 <- jatim2020 %>%
-    setNames(c("Daerah", "Penduduk"))`<br/>
-`banten2020 <- banten2020 %>%
-    setNames(c("Daerah", "Penduduk"))`<br/>
-`yogya2020 <- yogya2020 %>%<br/>
-    setNames(c("Daerah", "Penduduk"))`<br/>
+`jakarta2020 <- jakarta2020 %>%`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Penduduk"))`<br/>
+`jateng2020 <- jateng2020 %>%`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Penduduk"))`<br/>
+`jabar2020 <- jabar2020 %>%`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Penduduk"))`<br/>
+`jatim2020 <- jatim2020 %>%`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Penduduk"))`<br/>
+`banten2020 <- banten2020 %>%`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Penduduk"))`<br/>
+`yogya2020 <- yogya2020 %>%`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Penduduk"))`<br/>
 <br/>
-#penduduk jakarta 2268.81 ubah ke integer dan dikali 1000<br/>
+`#penduduk jakarta 2268.81 ubah ke integer dan dikali 1000`<br/>
 `library(readr) --parse_number()`<br/>
 `jakarta2020$Penduduk <- jakarta2020$Penduduk %>%
-	parse_number()`<br/>
-`jakarta2020 <- jakarta2020 %>%
-    mutate(Penduduk = Penduduk*1000)`<br/>
-`banten2020$Penduduk <- banten2020$Penduduk %>%
-    parse_number()`<br/>
-`jabar2020$Penduduk <- jabar2020$Penduduk %>%
-    parse_number()`<br/>
-`jatim2020$Penduduk <- jatim2020$Penduduk %>%
-    parse_number()`<br/>
-`jateng2020$Penduduk <- jateng2020$Penduduk %>%
-    parse_number()`<br/>
-`yogya2020$Penduduk <- yogya2020$Penduduk %>%
-    parse_number()`<br/>
+&emsp;&emsp;parse_number()`<br/>
+`jakarta2020 <- jakarta2020 %>%`<br/>
+&emsp;&emsp;`mutate(Penduduk = Penduduk*1000)`<br/>
+`banten2020$Penduduk <- banten2020$Penduduk %>%`<br/>
+&emsp;&emsp;`parse_number()`<br/>
+`jabar2020$Penduduk <- jabar2020$Penduduk %>%`<br/>
+&emsp;&emsp;`parse_number()`<br/>
+`jatim2020$Penduduk <- jatim2020$Penduduk %>%`<br/>
+&emsp;&emsp;`parse_number()`<br/>
+`jateng2020$Penduduk <- jateng2020$Penduduk %>%`<br/>
+&emsp;&emsp;`parse_number()`<br/>
+`yogya2020$Penduduk <- yogya2020$Penduduk %>%`<br/>
+&emsp;&emsp;`parse_number()`<br/>
 <br/>
-- add Provinsi table<br/>
-`yogya2020 <- yogya2020 %>%
-    mutate(Provinsi = 'Yogyakarta')`<br/>
-`jabar2020 <- jabar2020 %>%
-    mutate(Provinsi = 'Jawa Barat')`<br/>
-`jatim2020 <- jatim2020 %>%
-    mutate(Provinsi = 'Jawa Timur')`<br/>
-`jateng2020 <- jateng2020 %>%
-    mutate(Provinsi = 'Jawa Tengah')`<br/>
-`banten2020 <- banten2020 %>%
-    mutate(Provinsi = 'Banten')`<br/>
-`jakarta2020 <- jakarta2020 %>%
-    mutate(Provinsi = 'Jakarta Raya')`<br/>
+`#add Provinsi table`<br/>
+`yogya2020 <- yogya2020 %>%`<br/>
+&emsp;&emsp;`mutate(Provinsi = 'Yogyakarta')`<br/>
+`jabar2020 <- jabar2020 %>%`<br/>
+&emsp;&emsp;`mutate(Provinsi = 'Jawa Barat')`<br/>
+`jatim2020 <- jatim2020 %>%`<br/>
+&emsp;&emsp;`mutate(Provinsi = 'Jawa Timur')`<br/>
+`jateng2020 <- jateng2020 %>%`<br/>
+&emsp;&emsp;`mutate(Provinsi = 'Jawa Tengah')`<br/>
+`banten2020 <- banten2020 %>%`<br/>
+&emsp;&emsp;`mutate(Provinsi = 'Banten')`<br/>
+`jakarta2020 <- jakarta2020 %>%`<br/>
+&emsp;&emsp;`mutate(Provinsi = 'Jakarta Raya')`<br/>
 <br/>
 - bindrow<br/>
-`jawa2020 <- banten2020 %>%
-    bind_rows(jakarta2020, jabar2020, jateng2020, jatim2020, yogya2020)`<br/>
+`jawa2020 <- banten2020 %>%`<br/>
+&emsp;&emsp;`bind_rows(jakarta2020, jabar2020, jateng2020, jatim2020, yogya2020)`<br/>
 <br/>
-- rename<br/>
-`jawa2020$Daerah <- jawa2020$Daerah  %>%
-    str_replace("Kabupaten ", "") %>%
-    str_replace("Kab ", "") %>%
-    str_replace("Kep", "Kepulauan") %>%
-    str_replace("DKI Jakarta", "Jakarta Raya") %>%
-    str_replace("D.I. ", "") %>%
-    str_replace("PROVINSI JAWA TENGAH", "Jawa Tengah") %>%
-    str_replace("Provinsi", "") %>%
-    str_replace("Gunungkidul", "Gunung Kidul")`<br/>
+`#rename`<br/>
+`jawa2020$Daerah <- jawa2020$Daerah  %>%`<br/>
+&emsp;&emsp;`str_replace("Kabupaten ", "") %>%`<br/>
+&emsp;&emsp;`str_replace("Kab ", "") %>%`<br/>
+&emsp;&emsp;`str_replace("Kep", "Kepulauan") %>%`<br/>
+&emsp;&emsp;`str_replace("DKI Jakarta", "Jakarta Raya") %>%`<br/>
+&emsp;&emsp;`str_replace("D.I. ", "") %>%`<br/>
+&emsp;&emsp;`str_replace("PROVINSI JAWA TENGAH", "Jawa Tengah") %>%`<br/>
+&emsp;&emsp;`str_replace("Provinsi", "") %>%`<br/>
+&emsp;&emsp;`str_replace("Gunungkidul", "Gunung Kidul")`<br/>
 <br/>
 `jawa2020$Daerah <- jawa2020$Daerah  %>%
     str_replace("Kulonprogo", "Kulon Progo")`<br/>
