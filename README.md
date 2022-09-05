@@ -169,8 +169,8 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 `    inplace = False`<br/>
 `)`<br/>
 <br/>
-`data2 = data2.drop(
-&nbsp;&nbsp;&nbsp;&nbsp;labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
+`data2 = data2.drop(`<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
     axis = 1,
     inplace = False
 )`<br/>
