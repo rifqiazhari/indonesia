@@ -98,14 +98,16 @@
 `jawa2020$Daerah <- jawa2020$Daerah  %>%
     str_replace("Yogyakarta", "Kota Yogyakarta")`<br/>
 <br/>
-- web scraping to add pdrb data<br/>
+`#web scraping to add pdrb data`<br/>
 https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDRB<br/>
 <br/>
 `library(rvest)`<br/>
 `g <- read_html("https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDRB")`<br/>
-`gdp2016 <- g %>% html_nodes("table")`<br/>
+`gdp2016 <- g %>%`<br/>
+&emsp;&emsp;`html_nodes("table")`<br/>
 `gdp2016 <- gdp2016[[1]]`<br/>
-`gdp2016 <- gdp2016 %>% html_table`<br/>
+`gdp2016 <- gdp2016 %>%`<br/>
+&emsp;&emsp;`html_table`<br/>
 <br/>
 `gdp2016 <- gdp2016[,c(2:4)]`<br/>
 <br/>
