@@ -10,7 +10,7 @@
 ![alt text](g2ie2e.png)
 
 # Code in R
-`- Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'`<br/>
+- Kabupaten tanpa 'Kabupaten' Kota dengan 'Kota'<br/>
 `jakarta2020 <- read_excel ('Jakarta.xlsx')`<br/>
 `banten2020 <- read_excel ('Banten.xlsx')`<br/>
 `jabar2020 <- read_excel ('Jawa Barat.xlsx')`<br/>
