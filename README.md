@@ -261,20 +261,21 @@ data3 = data3.drop(
 `alter table girrafe.pdrb3 change `2014 (nominal)` `2014` double null;`<br/>
 `alter table girrafe.pdrb3 change `2015 (nominal)` `2015` double null;`<br/>
 <br/>
-#inner join
+`#inner join`<br/>
 `create table pdrb23 (
 	select pdrb3.Provinsi, `2013`, `2014`, `2015`, `2016`, `2017`, `2018` from pdrb3
 	inner join pdrb2
 	on pdrb3.Provinsi = pdrb2.Provinsi
-);``<br/>
-`<br/>
-`select * from pdrb23``<br/>
-`<br/>
+);`<br/>
+<br/>
+`select * from pdrb23`<br/>
+<br/>
 `create table pdrb123 (
 	select pdrb23.Provinsi, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`, `2021` from pdrb23
 	inner join pdrb1
 	on pdrb23.Provinsi = pdrb1.Provinsi
 );
-`<br/>`<br/>
+`<br/>
+<br/>
 `#results`<br/>
 `select * from pdrb123;`<br/>
