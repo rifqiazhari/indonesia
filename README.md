@@ -148,17 +148,17 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 # Code in Python
 #Import file - UI
 #Import library
-import pandas as pd
-import numpy as pd
-import matplotlib.pyplot as plt
-
-#read files
-data1= pd.read_excel('PDRB 2010.xlsx')
-data2= pd.read_excel('PDRB 2010B.xlsx')
-data3= pd.read_excel('PDRB 2010C.xlsx')
-
-#rename columns
-data1.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2019','Unnamed: 2':'2020', 'Unnamed: 3':'2021'}, inplace = True)
+`import pandas as pd`<br/>
+`import numpy as pd`<br/>
+`import matplotlib.pyplot as plt`<br/>
+<br/>
+`#read files`<br/>
+`data1= pd.read_excel('PDRB 2010.xlsx')`<br/>
+`data2= pd.read_excel('PDRB 2010B.xlsx')`<br/>
+`data3= pd.read_excel('PDRB 2010C.xlsx')`<br/>
+<br/>
+`#rename columns`<br/>
+`data1.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2019','Unnamed: 2':'2020', 'Unnamed: 3':'2021'}, inplace = True)`<br/>
 data2.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2016','Unnamed: 2':'2017', 'Unnamed: 3':'2018'}, inplace = True)
 data3.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2013','Unnamed: 2':'2014', 'Unnamed: 3':'2015'}, inplace = True)
 
