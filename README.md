@@ -182,8 +182,8 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 )`<br/>
 <br/>
 `#delete rows
-data3 = data3.drop(
-    labels = [0,1,37,38,39,40],
+data3 = data3.drop(`<br/>
+`          labels = [0,1,37,38,39,40],
     axis = 0,
     inplace = False
 )`<br/>
