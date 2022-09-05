@@ -46,8 +46,8 @@
 <br/>
 `#penduduk jakarta 2268.81 ubah ke integer dan dikali 1000`<br/>
 `library(readr) --parse_number()`<br/>
-`jakarta2020$Penduduk <- jakarta2020$Penduduk %>%
-&emsp;&emsp;parse_number()`<br/>
+`jakarta2020$Penduduk <- jakarta2020$Penduduk %>%`<br/>
+&emsp;&emsp;`parse_number()`<br/>
 `jakarta2020 <- jakarta2020 %>%`<br/>
 &emsp;&emsp;`mutate(Penduduk = Penduduk*1000)`<br/>
 `banten2020$Penduduk <- banten2020$Penduduk %>%`<br/>
@@ -103,7 +103,7 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 &emsp;&emsp;`html_nodes("table")`<br/>
 `gdp2016 <- gdp2016[[1]]`<br/>
 `gdp2016 <- gdp2016 %>%`<br/>
-&emsp;&emsp;`html_table`<br/>
+&emsp;&emsp;`html_table()`<br/>
 <br/>
 `gdp2016 <- gdp2016[,c(2:4)]`<br/>
 <br/>
