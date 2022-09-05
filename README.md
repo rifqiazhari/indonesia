@@ -175,105 +175,106 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
     inplace = False
 )`<br/>
 <br/>
-data3 = data3.drop(
+`data3 = data3.drop(
     labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
     axis = 1,
     inplace = False
-)
-
-#delete rows
+)`<br/>
+<br/>
+`#delete rows
 data3 = data3.drop(
     labels = [0,1,37,38,39,40],
     axis = 0,
     inplace = False
-)
+)`<br/>
 
-#left join
-data23 = pd.merge(data3,data2, on='Provinsi', how='left')
+`#left join`<br/>
+`data23 = pd.merge(data3,data2, on='Provinsi', how='left')`<br/>
+<br/>
+`#inner join`<br/>
+`data123 = pd.merge(data23,data1, on='Provinsi', how='inner')`<br/>
+<br/>
+`#results`<br/>
+`print(data123)`<br/>
+<br/>
+`#select only province in java island`<br/>
+`data123jawa = data123.loc[[15,10,11,12,13,14]]`<br/>
+<br/>
+`#bar chart grouped visualization`<br/>
+`x = np.arange(len(data123jawa.Provinsi))`<br/>
+`y5 = data123jawa['2017']`<br/>
+`y6 = data123jawa['2018']`<br/>
+`y7 = data123jawa['2019']`<br/>
+`y8 = data123jawa['2020']`<br/>
+`y9 = data123jawa['2021']`<br/>
+<br/>
+`width = 0.1`<br/>
+<br/>
 
-#inner join
-data123 = pd.merge(data23,data1, on='Provinsi', how='inner')
-
-#results
-print(data123)
-
-#select only province in java island
-data123jawa = data123.loc[[15,10,11,12,13,14]]
-
-#bar chart grouped visualization
-x = np.arange(len(data123jawa.Provinsi))
-y5 = data123jawa['2017']
-y6 = data123jawa['2018']
-y7 = data123jawa['2019']
-y8 = data123jawa['2020']
-y9 = data123jawa['2021']
-
-width = 0.1
-
-
-fig, ax = plt.subplots()
-rects5 = ax.bar(x - 0.2, y5, width, label='2017')
-rects6 = ax.bar(x - 0.1, y6, width, label='2018')
-rects7 = ax.bar(x - 0.0, y7, width, label='2019')
-rects8 = ax.bar(x + 0.1, y8, width, label='2020')
-rects9 = ax.bar(x + 0.2, y9, width, label='2021')
-
-ax.set_ylabel('GDP')
-ax.set_title('GDP (Nominal) in Java Island')
-ax.set_xticks(x, data123jawa['Provinsi'])
-ax.legend()
-
-fig.tight_layout()
-
-plt.show()
-
-#reshaped
-data123jawa_reshaped = pd.melt(data123jawa, id_vars='Provinsi', value_name='GDP', var_name='year')
-
+`fig, ax = plt.subplots()`<br/>
+`rects5 = ax.bar(x - 0.2, y5, width, label='2017')`<br/>
+`rects6 = ax.bar(x - 0.1, y6, width, label='2018')`<br/>
+`rects7 = ax.bar(x - 0.0, y7, width, label='2019')`<br/>
+`rects8 = ax.bar(x + 0.1, y8, width, label='2020')`<br/>
+`rects9 = ax.bar(x + 0.2, y9, width, label='2021')`<br/>
+<br/>
+`ax.set_ylabel('GDP')`<br/>
+`ax.set_title('GDP (Nominal) in Java Island')`<br/>
+`ax.set_xticks(x, data123jawa['Provinsi'])`<br/>
+`ax.legend()`<br/>
+<br/>
+`fig.tight_layout()`<br/>
+<br/>
+`plt.show()`<br/>
+<br/>
+`#reshaped`<br/>
+`data123jawa_reshaped = pd.melt(data123jawa, id_vars='Provinsi', value_name='GDP', var_name='year')`<br/>
+<br/>
 # Code in SQL
-#import table to the database (csv) - UI
+`#import table to the database (csv) - UI`<br/>
+<br/>
+`#rename table`<br/>
+`rename table girrafe.pdrb TO girrafe.pdrb1;`<br/>
+<br/>
+`#delete and rename columns`<br/>
+`select * from pdrb1;`<br/>
+`alter table girrafe.pdrb1 drop column `2019 Konstan`;`<br/>
+`alter table girrafe.pdrb1 drop column `2020 Konstan`;`<br/>
+`alter table girrafe.pdrb1 drop column `2021 Konstan`;`<br/>
+`alter table girrafe.pdrb1 change `2019 Berlaku` `2019` double null;`<br/>
+`alter table girrafe.pdrb1 change `2020 Berlaku` `2020` double null;`<br/>
+`alter table girrafe.pdrb1 change `2021 Berlaku` `2021` double null;`<br/>
 
-#rename table
-rename table girrafe.pdrb TO girrafe.pdrb1;
-
-#delete and rename columns
-select * from pdrb1;
-alter table girrafe.pdrb1 drop column `2019 Konstan`;
-alter table girrafe.pdrb1 drop column `2020 Konstan`;
-alter table girrafe.pdrb1 drop column `2021 Konstan`;
-alter table girrafe.pdrb1 change `2019 Berlaku` `2019` double null;
-alter table girrafe.pdrb1 change `2020 Berlaku` `2020` double null;
-alter table girrafe.pdrb1 change `2021 Berlaku` `2021` double null;
-
-select * from pdrb2;
-alter table girrafe.pdrb2 drop column `2016 Konstan`;
-alter table girrafe.pdrb2 drop column `2017 Konstan`;
-alter table girrafe.pdrb2 drop column `2018 Konstan`;
-alter table girrafe.pdrb2 change `2016 (nominal)` `2016` double null;
-alter table girrafe.pdrb2 change `2017 (nominal)` `2017` double null;
-alter table girrafe.pdrb2 change `2018 (nominal)` `2018` double null;
-
-select * from pdrb3;
-alter table girrafe.pdrb3 drop column `2013h`;
-alter table girrafe.pdrb3 drop column `2014i`;
-alter table girrafe.pdrb3 drop column `2015j`;
-alter table girrafe.pdrb3 change `2013 (nominal)` `2013` double null;
-alter table girrafe.pdrb3 change `2014 (nominal)` `2014` double null;
-alter table girrafe.pdrb3 change `2015 (nominal)` `2015` double null;
-
+`select * from pdrb2;`<br/>
+`alter table girrafe.pdrb2 drop column `2016 Konstan`;`<br/>
+`alter table girrafe.pdrb2 drop column `2017 Konstan`;`<br/>
+`alter table girrafe.pdrb2 drop column `2018 Konstan`;`<br/>
+`alter table girrafe.pdrb2 change `2016 (nominal)` `2016` double null;`<br/>
+`alter table girrafe.pdrb2 change `2017 (nominal)` `2017` double null;`<br/>
+`alter table girrafe.pdrb2 change `2018 (nominal)` `2018` double null;`<br/>
+<br/>
+`select * from pdrb3;`<br/>
+`alter table girrafe.pdrb3 drop column `2013h`;`<br/>
+`alter table girrafe.pdrb3 drop column `2014i`;`<br/>
+`alter table girrafe.pdrb3 drop column `2015j`;`<br/>
+`alter table girrafe.pdrb3 change `2013 (nominal)` `2013` double null;`<br/>
+`alter table girrafe.pdrb3 change `2014 (nominal)` `2014` double null;`<br/>
+`alter table girrafe.pdrb3 change `2015 (nominal)` `2015` double null;`<br/>
+<br/>
 #inner join
-create table pdrb23 (
+`create table pdrb23 (
 	select pdrb3.Provinsi, `2013`, `2014`, `2015`, `2016`, `2017`, `2018` from pdrb3
 	inner join pdrb2
 	on pdrb3.Provinsi = pdrb2.Provinsi
-);
-select * from pdrb23
-
-create table pdrb123 (
+);``<br/>
+`<br/>
+`select * from pdrb23``<br/>
+`<br/>
+`create table pdrb123 (
 	select pdrb23.Provinsi, `2013`, `2014`, `2015`, `2016`, `2017`, `2018`, `2019`, `2020`, `2021` from pdrb23
 	inner join pdrb1
 	on pdrb23.Provinsi = pdrb1.Provinsi
 );
-
-#results
-select * from pdrb123;
+``<br/>`<br/>
+`#results`<br/>
+`select * from pdrb123;`<br/>
