@@ -110,40 +110,41 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 `gdp2016 <- gdp2016[,c(2:4)]`<br/>
 <br/>
 `gdp2016 <- gdp2016 %>%
-    setNames(c("Daerah", "Provinsi", "PDRB"))`<br/>
+&emsp;&emsp;`setNames(c("Daerah", "Provinsi", "PDRB"))`<br/>
 <br/>
-- rename provinsi di pulau jawa<br/>
-`gdp2016$Provinsi <- gdp2016$Provinsi %>%
-    str_replace("Daerah Istimewa Yogyakarta", "Yogyakarta") %>%
-    str_replace("Daerah Khusus Ibukota Jakarta", "Jakarta Raya") %>%
-    str_replace("Daerah Khusus Ibu Kota Jakarta", "Jakarta Raya")`<br/>
 
-- filter hanya provinsi di pulau jawa<br/>
-`gdp2016 <- gdp2016 %>%
-    filter(Provinsi %in% c('Jakarta Raya', 'Jawa Barat', 'Banten', 'Jawa Tengah', 'Yogyakarta', 'Jawa Timur'))`<br/>
+`#rename provinsi di pulau jawa`<br/>
+`gdp2016$Provinsi <- gdp2016$Provinsi %>%`<br/>
+&emsp;&emsp;`str_replace("Daerah Istimewa Yogyakarta", "Yogyakarta") %>%`<br/>
+&emsp;&emsp;`str_replace("Daerah Khusus Ibukota Jakarta", "Jakarta Raya") %>%`<br/>
+&emsp;&emsp;`str_replace("Daerah Khusus Ibu Kota Jakarta", "Jakarta Raya")`<br/>
 
-- rename nama daerah<br/>
-`gdp2016$Daerah <- gdp2016$Daerah  %>%
-    str_replace("Kabupaten ", "") %>%
-    str_replace("Kota Administrasi ", "") %>%
-    str_replace("Administrasi ", "") %>%
-    str_replace("Gunungkidul", "Gunung Kidul")`<br/>
+`#filter hanya provinsi di pulau jawa`<br/>
+`gdp2016 <- gdp2016 %>%`<br/
+&emsp;&emsp;`filter(Provinsi %in% c('Jakarta Raya', 'Jawa Barat', 'Banten', 'Jawa Tengah', 'Yogyakarta', 'Jawa Timur'))`<br/>
+
+`#rename nama daerah`<br/>
+`gdp2016$Daerah <- gdp2016$Daerah  %>%`<br/>
+&emsp;&emsp;`str_replace("Kabupaten ", "") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Administrasi ", "") %>%`<br/>
+&emsp;&emsp;`str_replace("Administrasi ", "") %>%`<br/>
+&emsp;&emsp;`str_replace("Gunungkidul", "Gunung Kidul")`<br/>
 <br/>
 - join jawa2020 & gdp2016<br/>
 `join <- jawa2020 %>%
     inner_join(gdp2016, by = "Daerah")`<br/>
 <br/>
 - penyesuaian dengan data shp<br/>
-`join$Daerah <- join$Daerah %>%
-    str_replace("Kota Cilegon", "Cilegon") %>%
-    str_replace("Kota Tangerang Selatan", "Tangerang Selatan") %>%
-    str_replace("Kota Depok", "Depok") %>%
-    str_replace("Kota Cimahi", "Cimahi") %>%
-    str_replace("Kota Banjar", "Banjar") %>%
-    str_replace("Kota Salatiga", "Salatiga") %>%
-    str_replace("Kota Surakarta", "Surakarta") %>%
-    str_replace("Kota Batu", "Batu") %>%
-    str_replace("Kota Surabaya", "Surabaya")`<br/>
+`join$Daerah <- join$Daerah %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Cilegon", "Cilegon") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Tangerang Selatan", "Tangerang Selatan") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Depok", "Depok") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Cimahi", "Cimahi") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Banjar", "Banjar") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Salatiga", "Salatiga") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Surakarta", "Surakarta") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Batu", "Batu") %>%`<br/>
+&emsp;&emsp;`str_replace("Kota Surabaya", "Surabaya")`<br/>
 
 # Code in Python
 `#Import file`<br/>
@@ -162,12 +163,13 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 `data2.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2016','Unnamed: 2':'2017', 'Unnamed: 3':'2018'}, inplace = True)`<br/>
 `data3.rename(columns={'Provinsi': 'Provinsi', '[Seri 2010] Produk Domestik Regional Bruto (Milyar Rupiah)':'2013','Unnamed: 2':'2014', 'Unnamed: 3':'2015'}, inplace = True)`<br/>
 <br/>
+
 `#delete columns`<br/>
 `data1 = data1.drop(`<br/>
-`    labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],`<br/>
-`    axis = 1,`<br/>
-`    inplace = False`<br/>
-`)`<br/>
+&emsp;&emsp;`labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],`<br/>
+&emsp;&emsp;`axis = 1,`<br/>
+&emsp;&emsp;`inplace = False`<br/>
+&emsp;&emsp;`)`<br/>
 <br/>
 `data2 = data2.drop(`<br/>
 &emsp;&emsp;`labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],`<br/>
@@ -175,18 +177,19 @@ https://id.wikipedia.org/wiki/Daftar_kabupaten_dan_kota_di_Indonesia_menurut_PDR
 &emsp;&emsp;`inplace = False`<br/>
 &emsp;&emsp;`)`<br/>
 <br/>
-`data3 = data3.drop(
-    labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],
-    axis = 1,
-    inplace = False
-)`<br/>
+`data3 = data3.drop(`<br/>
+&emsp;&emsp;`labels = ["Unnamed: 4", "Unnamed: 5", "Unnamed: 6"],`<br/>
+&emsp;&emsp;`axis = 1,`<br/>
+&emsp;&emsp;`inplace = False`<br/>
+&emsp;&emsp;`)`<br/>
 <br/>
-`#delete rows
-data3 = data3.drop(`<br/>
-`          labels = [0,1,37,38,39,40],
-    axis = 0,
-    inplace = False
-)`<br/>
+
+`#delete rows`<br/>
+`data3 = data3.drop(`<br/>
+&emsp;&emsp;`labels = [0,1,37,38,39,40],`<br/>
+&emsp;&emsp;`axis = 0,`<br/>
+&emsp;&emsp;`inplace = False`<br/>
+&emsp;&emsp;`)`<br/>
 
 `#left join`<br/>
 `data23 = pd.merge(data3,data2, on='Provinsi', how='left')`<br/>
